@@ -1,6 +1,7 @@
 package com.sinoed.gifviewer.model;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -14,6 +15,7 @@ public class User {
     @GeneratedValue
     private Long id;
 
+    @NonNull
     private String name;
 
     @OneToMany(mappedBy = "user")
