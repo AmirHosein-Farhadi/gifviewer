@@ -1,7 +1,6 @@
 package com.sinoed.gifviewer.model;
 
-import lombok.Data;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -9,6 +8,9 @@ import java.util.Set;
 
 @Entity
 @Data
+@NoArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode(exclude = {"gif"})
 public class User {
 
     @Id
@@ -19,5 +21,5 @@ public class User {
     private String name;
 
     @OneToMany(mappedBy = "user")
-    private Set<Gif> gifs = new HashSet<>();
+    private Set<Gif> gif = new HashSet<>();
 }
